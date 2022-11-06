@@ -91,7 +91,7 @@ def search_age_range(age: float):
 
 
 if __name__ == "__main__":
-    url = 'https://firebasestorage.googleapis.com/v0/b/prueba-tesis-8e65c.appspot.com/o/tabla1-span.csv?alt=media&token=ab4f87da-52d4-444a-854b-bccba384c7d8'
+    url = 'https://firebasestorage.googleapis.com/v0/b/prueba-tesis-8e65c.appspot.com/o/tabla22-span.csv?alt=media&token=c4749a7a-54db-4682-b128-389882a21777'
     df = pd.read_csv(url)
     dic = df.to_dict(orient='records')
     json_dic = json.dumps(dic, indent=4)
