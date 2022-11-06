@@ -1,13 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
-from domains.commands import UserData, TestData
+from domains.commands import UserData, FaceTestData, SpanTestData
 from handlers import handlers
 
-
-TEST_IDS = {
-    'face_test': handlers.calculate_face_test
-}
 
 app = FastAPI()
 
@@ -19,6 +14,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.get('/')
 def root():
     return {
@@ -26,6 +22,11 @@ def root():
     }
 
 
-@app.post('/calculate')
-def calculate(test_id: str, user_data: UserData, test_data: TestData):
-    return TEST_IDS.get(test_id)(user_data, test_data)
+@app.post('/calculate_face_test')
+def calculate_face_test(user_data: UserData, test_data: FaceTestData):
+    return handlers.calculate_face_test(user_data, test_data)
+
+
+@app.post('/calculate_span_test')
+def calculate_span_test(user_data: UserData, test_data: SpanTestData):
+    return handlers.calculate_span_test(user_data, test_data)

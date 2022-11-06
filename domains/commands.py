@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from typing import Optional
 
 
 class Command(BaseModel):
@@ -8,10 +9,15 @@ class Command(BaseModel):
 class UserData(Command):
     name: str
     age: int
+    age_in_months: Optional[float] = None
 
 
-class TestData(Command):
+class FaceTestData(Command):
     hits: int
     errors: int
     net_hits: int
     ici: int
+
+
+class SpanTestData(Command):
+    ri: int
