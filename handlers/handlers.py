@@ -2,7 +2,10 @@ import pandas as pd
 import json
 # from database.firebase import db
 from domains.commands import UserData, FaceTestData, SpanTestData
-from data.tables import TABLE_A_FT, TABLE_B_FT, TABLE_C_FT, TABLE_D_FT, TABLE_E_FT, TABLE_F_FT, TABLE_G_FT, TABLE_A_ST
+from data.tables import TABLE_A_FT, TABLE_B_FT, TABLE_C_FT, TABLE_D_FT, TABLE_E_FT, TABLE_F_FT, TABLE_G_FT, TABLE_A_ST, \
+    TABLE_B_ST, TABLE_C_ST, TABLE_D_ST, TABLE_E_ST, TABLE_F_ST, TABLE_G_ST, TABLE_H_ST, TABLE_I_ST, TABLE_J_ST, \
+    TABLE_K_ST, TABLE_L_ST, TABLE_M_ST, TABLE_N_ST, TABLE_O_ST, TABLE_P_ST, TABLE_Q_ST, TABLE_R_ST, TABLE_S_ST, \
+    TABLE_T_ST, TABLE_U_ST, TABLE_V_ST
 
 
 TABLES_FT = {
@@ -17,7 +20,28 @@ TABLES_FT = {
 }
 
 TABLES_ST = {
-    0: TABLE_A_ST
+    0: TABLE_A_ST,
+    1: TABLE_B_ST,
+    2: TABLE_C_ST,
+    3: TABLE_D_ST,
+    4: TABLE_E_ST,
+    5: TABLE_F_ST,
+    6: TABLE_G_ST,
+    7: TABLE_H_ST,
+    8: TABLE_I_ST,
+    9: TABLE_J_ST,
+    10: TABLE_K_ST,
+    11: TABLE_L_ST,
+    12: TABLE_M_ST,
+    13: TABLE_N_ST,
+    14: TABLE_O_ST,
+    15: TABLE_P_ST,
+    16: TABLE_Q_ST,
+    17: TABLE_R_ST,
+    18: TABLE_S_ST,
+    19: TABLE_T_ST,
+    20: TABLE_U_ST,
+    21: TABLE_V_ST
 }
 
 AGE_RANGES = [

@@ -8,7 +8,7 @@ class Command(BaseModel):
 
 class UserData(Command):
     name: str
-    age: int
+    age: Optional[int] = None
     age_in_months: Optional[float] = None
 
 
