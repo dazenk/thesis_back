@@ -70,7 +70,7 @@ AGE_RANGES = [
 ]
 
 
-def calculate_face_test(user_data: UserData, test_data: FaceTestData):
+def calculate_face_test(user_data: UserData, test_data: FaceTestData):  # Calcula eneatipos de puntuaciones 1er test
     table = pd.DataFrame(TABLES_FT.get(user_data.age))
     results = {
         "hits": search_value(df=table, column='A', value=test_data.hits, result_column='En'),
@@ -81,7 +81,7 @@ def calculate_face_test(user_data: UserData, test_data: FaceTestData):
     return results
 
 
-def search_value(df: pd.DataFrame, column: any, value: int, result_column: any):
+def search_value(df: pd.DataFrame, column: any, value: int, result_column: any):  # Busca eneatipo o puntuación escalar
     rows_quantity = len(df.index)
     found_value = -1
     for row_idx in range(rows_quantity):
@@ -95,7 +95,7 @@ def search_value(df: pd.DataFrame, column: any, value: int, result_column: any):
     return int(found_value)
 
 
-def calculate_span_test(user_data: UserData, test_data: SpanTestData):
+def calculate_span_test(user_data: UserData, test_data: SpanTestData):  # Calcula puntuación escalar del 2do test
     result = None
     table_idx = search_age_range(age=user_data.age_in_months)
     if table_idx != -1:
@@ -106,7 +106,7 @@ def calculate_span_test(user_data: UserData, test_data: SpanTestData):
     return result
 
 
-def search_age_range(age: float):
+def search_age_range(age: float):  # Valida que el rango de edad sea el adecuado para hacer los cálculos 2 test
     pos = -1
     for idx in range(len(AGE_RANGES)):
         if AGE_RANGES[idx][0] <= age <= AGE_RANGES[idx][1]:

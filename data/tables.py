@@ -1,4 +1,5 @@
-
+# Guarda las tablas guía para transformar las puntuaciones tanto para el test de percepción de diferencias como
+# para el test de span de imágenes
 # FACE_TEST ------------------------------------------------------------------------------------------------------------
 TABLE_A_FT = [
     {
